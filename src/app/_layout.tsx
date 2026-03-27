@@ -3,7 +3,14 @@ import { SymbolView } from "expo-symbols";
 
 export default function RootLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: "#ef4444",
+        tabBarInactiveTintColor:"#6b7280 ",
+        tabBarStyle: {backgroundColor: "#ffffff", borderTopColor: "#e5e7eb" },
+        headerStyle: { backgroundColor: "#ef4444" },
+        headerTintColor: "#ffffff",
+      }} >
       <Tabs.Screen
         name="index"
         options={{
