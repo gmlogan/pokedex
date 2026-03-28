@@ -1,16 +1,9 @@
-import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <NativeTabs tintColor="#ef4444">
-      <NativeTabs.Trigger name="index">
-        <Icon sf="list.bullet" />
-        <Label>Pokédex</Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="favourites">
-        <Icon sf="star.fill" />
-        <Label>Favourites</Label>
-      </NativeTabs.Trigger>
-    </NativeTabs>
+    <Stack screenOptions={{ headerTintColor: "#ef4444", headerBackTitle: "Back" }}>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
   );
 }
