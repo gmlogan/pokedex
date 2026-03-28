@@ -1,34 +1,16 @@
-import { Tabs } from "expo-router";
-import { SymbolView } from "expo-symbols";
+import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 
 export default function RootLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: "#ef4444",
-        tabBarInactiveTintColor:"#6b7280 ",
-        tabBarStyle: {backgroundColor: "#ffffff", borderTopColor: "#e5e7eb" },
-        headerStyle: { backgroundColor: "#ef4444" },
-        headerTintColor: "#ffffff",
-      }} >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "Pokédex",
-          tabBarIcon: ({ color }) => (
-            <SymbolView name="list.bullet" tintColor={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="favourites"
-        options={{
-          title: "Favourites",
-          tabBarIcon: ({ color }) => (
-            <SymbolView name="star.fill" tintColor={color} />
-          ),
-        }}
-      />
-    </Tabs>
+    <NativeTabs tintColor="#ef4444">
+      <NativeTabs.Trigger name="index">
+        <Icon sf="list.bullet" />
+        <Label>Pokédex</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="favourites">
+        <Icon sf="star.fill" />
+        <Label>Favourites</Label>
+      </NativeTabs.Trigger>
+    </NativeTabs>
   );
 }
